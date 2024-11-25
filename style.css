@@ -1,0 +1,38 @@
+*   {
+    margin: 0;
+    padding: 0;
+}
+
+body    {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+main    {
+    width: 800px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.stylebtn   {
+    border: none;
+    height: 50px;
+    width: 100px;
+    color: white;
+    background-color: rgb(42, 101, 228);
+    font-size: 15px;
+    text-transform: capitalize;
+}
+
+.numberContainer {
+    padding: 50px;
+    font-size: 100px
+}
+
+.title  {
+    font-size: 60px;
+    text-transform: uppercase;
+}
