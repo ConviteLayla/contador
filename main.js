@@ -1,36 +1,31 @@
-let base = 0
+let counter = 0;
 
-window.addEventListener("load", () => {
-    document.getElementById("number").innerText = base
-});
+const value = document.querySelector(".value")
+const btn = document.querySelectorAll(".btn")
 
-function counter() {
-    base += 1
-
-    if (base < 0) {
-        document.getElementById("number").style.color = "#aa0000"
-    }
-    else {
-        document.getElementById("number").style.color = "#00aa00"
-
-    }    
-    document.getElementById("number").innerText = base
-    console.log(base)
-}
-
-function reset() {
-    base = 0
-    document.getElementById("number").innerText = base
-}
-
-function remove() {
-    base -= 1
-    if (base < 0) {
-        document.getElementById("number").style.color = "#aa0000"
-    }
-    else {
-        document.getElementById("number").style.color = "#00aa00"
-
-    }   
-    document.getElementById("number").innerText = base
-}
+btn.forEach((itens) => {
+    itens.addEventListener("click", (event) => {
+        const classValue = event.target.classList;
+        if(classValue.contains("decrescer")) {
+            counter--
+            value.textContent = counter
+        }
+        else if (classValue.contains("acrescentar")) {
+            counter++
+            value.textContent = counter
+        }
+        else    {
+            counter = 0
+            value.textContent = counter
+        }
+        if (counter < 0) {
+            value.style.color = "#aa0000"
+        }
+        else if (counter > 0) {
+            value.style.color = "#00aa00"
+        }
+        else {
+            value.style.color = "#000000"
+        }
+    })
+})
